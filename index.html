@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>testing script logic</title>
+  <style>
+    button + button {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  here it is the page
+  <script src="/Button.js" onclick="console.log('the from button')">
+    <span>another button
+      <script src="/CustomAsyncTag.js" >
+      </script>
+      </span>
+  </script>
+  <script src="/CustomAsyncTag.js" >
+  </script>
+
+  <button>jander clander
+    <script src="/CustomAsyncTag.js" >
+  </script>
+
+  </button>
+
+
+</body>
+</html>
