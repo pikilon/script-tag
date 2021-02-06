@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>testing script logic</title>
+  <title>Hacking script tags!</title>
   <style>
-    button + button {
+    /* check the tags be*/
+    button+button {
       background-color: red;
     }
   </style>
 </head>
-<body>
 
-  here it is the page
-  <script src="/Button.js" onclick="console.log('the from button')">
-    <span>another button
-      <script src="/CustomAsyncTag.js" >
-      </script>
-      </span>
-  </script>
-  <script src="/CustomAsyncTag.js" >
-  </script>
+  <body>
 
-  <button>jander clander
-    <script src="/CustomAsyncTag.js" >
-  </script>
+    <h1>the next components are selfloading inside their own script tag</h1>
 
-  </button>
+    <script src="/Button.js" onclick="console.log('Simple component')">
+      Simple without nested
+    </script>
+    <script src="/Button.js" onclick="console.log('Only a Nested component')">
+        < script src = "/CustomAsyncTag.js" tag = "span" ></script>
+    </script>
 
+    <script src="/Button.js" onclick="console.log('Nested inside html tag')">
+      <div>Main div with inner nested script
+        <script src="/CustomAsyncTag.js" tag="span"></script>
+      </div>
+    </script>
 
-</body>
+    <script src="/Button.js" onclick="console.log('Html and sibling nested')">
+        <div>Html and nested siblings</div>
+        <script src="/CustomAsyncTag.js" tag="span"></script>
+    </script>
+
+    <script src="/CustomAsyncTag.js" tag="span"></script>
+
+  </body>
 </html>

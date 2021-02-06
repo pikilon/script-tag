@@ -19,9 +19,11 @@
   tag.parentNode.insertBefore(myButton, tag.nextSibling);
   tag.remove()
   myButton.querySelectorAll("script").forEach(nestedOriginal => {
-    console.log('nestedOriginaltem', nestedOriginal.src);
     const createNested = document.createElement("script")
-    createNested.src = nestedOriginal.src
+    nestedOriginal.getAttributeNames().forEach(name => {
+      createNested.setAttribute(name, nestedOriginal.getAttribute(name))
+    })
+
     myButton.appendChild(createNested)
     nestedOriginal.remove()
 

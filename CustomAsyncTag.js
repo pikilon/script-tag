@@ -8,9 +8,10 @@
   console.log("I am the async");
 
 
-  const { innerHTML, onclick, wrappertag } = tag;
-  const myTag = document.createElement(wrappertag);
+  const { innerHTML, onclick } = tag;
+  const myTag = document.createElement(tag.getAttribute("tag"));
   myTag.innerHTML = 'not loaded';
+  myTag.onclick = () => console.log("ASYNC TAG", myTag.innerHTML)
   apiCall().then(loadedData => {
     myTag.innerHTML = loadedData
   })
