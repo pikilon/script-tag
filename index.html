@@ -8,7 +8,7 @@
   <style>
     /* check the tags be*/
     button+button {
-      background-color: red;
+      background-color: orange;
     }
   </style>
 </head>
@@ -17,25 +17,25 @@
 
     <h1>the next components are selfloading inside their own script tag</h1>
 
-    <script src="/Button.js" onclick="console.log('Simple component')">
+    <script src="Button.js" onclick="console.log('Simple component')">
       Simple without nested
     </script>
-    <script src="/Button.js" onclick="console.log('Only a Nested component')">
-        < script src = "/CustomAsyncTag.js" tag = "span" ></script>
+    <script src="Button.js" onclick="console.log('Only a Nested component')">
+        <script src="CustomAsyncTag.js" tag="span"></script>
     </script>
 
-    <script src="/Button.js" onclick="console.log('Nested inside html tag')">
+    <script src="Button.js" onclick="console.log('Nested inside html tag')">
       <div>Main div with inner nested script
-        <script src="/CustomAsyncTag.js" tag="span"></script>
+        <script src="CustomAsyncTag.js" tag="span"></script>
       </div>
     </script>
 
-    <script src="/Button.js" onclick="console.log('Html and sibling nested')">
+    <script src="Button.js" onclick="console.log('Html and sibling nested')">
         <div>Html and nested siblings</div>
-        <script src="/CustomAsyncTag.js" tag="span"></script>
+        <script src="CustomAsyncTag.js" tag="span"></script>
     </script>
 
-    <script src="/CustomAsyncTag.js" tag="span"></script>
+    <script src="CustomAsyncTag.js" tag="span"></script>
 
   </body>
 </html>
